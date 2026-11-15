@@ -1,0 +1,414 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #050814;
+    color: white;
+    font-family: Georgia, serif;
+    overflow: hidden;
+}
+
+/* FRONT PAGE */
+
+#frontPage {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #050814;
+}
+
+.earth-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+}
+
+.front-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(3, 7, 20, 0.85),
+        rgba(3, 7, 20, 0.2)
+    );
+}
+
+.front-content {
+    position: absolute;
+    top: 50%;
+    left: 9%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 750px;
+}
+
+.small-heading {
+    letter-spacing: 5px;
+    color: #9dbbdf;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.front-content h1 {
+    font-size: clamp(45px, 7vw, 95px);
+    letter-spacing: 5px;
+    line-height: 1.05;
+    text-shadow: 0 5px 30px black;
+}
+
+.tagline {
+    color: #cbd7e8;
+    margin-top: 22px;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+#beginButton {
+    margin-top: 38px;
+    padding: 16px 30px;
+    background: #d9e8ff;
+    color: #07101e;
+    border: none;
+    letter-spacing: 2px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+#beginButton:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* MOVIE */
+
+.hidden {
+    display: none !important;
+}
+
+#movie {
+    position: fixed;
+    inset: 0;
+    background: #050814;
+}
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 22px 35px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#030611, transparent);
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: #c4d8f5;
+}
+
+#visualArea {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #080d1b;
+}
+
+#sceneImage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(2, 5, 15, 0.95) 0%,
+        rgba(2, 5, 15, 0.25) 60%,
+        rgba(2, 5, 15, 0.35) 100%
+    );
+}
+
+/* CHAPTER CARDS */
+#chapterCard {
+    display: none !important;
+}
+
+#chapterEyebrow {
+    color: #a8c9f5;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+#chapterTitle {
+    font-size: clamp(45px, 7vw, 85px);
+    letter-spacing: 3px;
+    text-shadow: 0 5px 25px black;
+}
+
+#chapterSubtitle {
+    font-size: 19px;
+    color: #d0d9e8;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* CHARACTER PORTRAIT */
+
+#speakerPortrait 
+.speaker-portrait,
+#speakerPortrait {
+    display: none !important;
+}
+
+#characterImage {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.5));
+    animation: fadeIn 0.5s ease;
+}
+
+/* DIALOGUE */
+
+
+/* DIALOGUE BOX */
+
+#dialogueBox {
+    position: fixed;
+    right: 35px;
+    bottom: 95px;
+    width: 420px;
+    min-height: 120px;
+    max-height: 180px;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    text-align: left;
+    z-index: 10;
+    overflow-y: auto;
+}
+
+#dialogueText {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+#speakerName {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+#nextButton {
+    position: fixed;
+    right: 35px;
+    bottom: 25px;
+    z-index: 20;
+}
+
+
+/* SPEAKER NAME */
+#speakerName {
+    display: block;
+    color: #b8d8ff;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* DIALOGUE TEXT */
+#dialogueText {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
+    color: white;
+    font-size: 16px;
+    line-height: 1.55;
+    font-family: Georgia, serif;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* SMALLER SCREENS */
+@media (max-width: 700px) {
+    #dialogueBox {
+        right: 4%;
+        bottom: 4%;
+        width: 92%;
+        min-width: 0;
+        max-width: none;
+        padding: 16px 18px;
+    }
+}
+
+
+#dialogueText {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+#speakerName {
+    color: #a9caff;
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+#dialogueText {
+    font-size: clamp(17px, 2vw, 23px);
+    line-height: 1.6;
+    color: #f3f6fc;
+}
+
+/* CONTROLS */
+
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 18px 35px;
+    background: linear-gradient(transparent, #030611);
+}
+
+.progress-track {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.2);
+    margin-bottom: 16px;
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: #b5d3ff;
+    transition: width 0.3s;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.4);
+    color: white;
+    padding: 12px 22px;
+    letter-spacing: 2px;
+    font-size: 11px;
+}
+
+.controls button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FINISH SCREEN */
+
+#finishScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #030714;
+    padding: 30px;
+}
+
+#finishScreen h1 {
+    font-size: clamp(38px, 6vw, 75px);
+    letter-spacing: 4px;
+}
+
+#finishScreen p {
+    color: #bdcce2;
+    font-size: 18px;
+    margin-top: 20px;
+    max-width: 650px;
+    line-height: 1.7;
+}
+
+#replayButton {
+    margin-top: 35px;
+    padding: 15px 30px;
+    background: #d9e8ff;
+    color: #07101e;
+    border: none;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .front-content {
+        left: 7%;
+        right: 7%;
+    }
+
+    #speakerPortrait {
+        width: 65%;
+        height: 55%;
+        right: 0;
+    }
+
+    #dialogueBox {
+        left: 4%;
+        bottom: 95px;
+        width: 92%;
+        padding: 16px;
+    }
+
+    #chapterCard {
+        left: 7%;
+        right: 7%;
+    }
+
+    .top-bar {
+        padding: 17px;
+        font-size: 10px;
+    }
+
+    .bottom-bar {
+        padding: 12px;
+    }
+}
+
+
